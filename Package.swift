@@ -14,16 +14,38 @@ let package = Package(
             targets: ["ASEELicenseGenerationSDK"]
         ),
     ],
+    dependencies: [
+        .package(
+            url: "ssh://git@git.asseco-see.hr:2022/all-projects/asseco-see-hrvatska/security-and-compliance/products/mobile-development/ios.assecolib.authenticationbasesdk.package.git",
+            branch: "mdokic-WIP"
+        ),
+    ],
     targets: [
         .binaryTarget(
-            name: "ASEELicenseValidationSDK",
+            name: "ASEELicenseValidationSDKBinary",
             url: "https://github.com/mateod062/asee-licensing-sdk-ios/releases/download/v1.0.0/ASEELicenseValidationSDK.xcframework.zip",
-            checksum: "0ee818f783201c848abb329e23121bc98701b651529f3e54ba25973f1acc1b61"
+            checksum: "a95babbc03181034eba12ca5232b25ad605863cfc6ef4ff19c1a81a4e8ade69b"
         ),
         .binaryTarget(
-            name: "ASEELicenseGenerationSDK",
+            name: "ASEELicenseGenerationSDKBinary",
             url: "https://github.com/mateod062/asee-licensing-sdk-ios/releases/download/v1.0.0/ASEELicenseGenerationSDK.xcframework.zip",
-            checksum: "b54691b99bb364c70005281e3a68e3e4c82ba99d5cabd22e6efa267299976042"
+            checksum: "72b3e790aaf68efb257f07e119eb0e6e94aa8ee239e100a82fe14980bd03024c"
+        ),
+        .target(
+            name: "ASEELicenseValidationSDK",
+            dependencies: [
+                "ASEELicenseValidationSDKBinary",
+                .product(name: "ASEEAuthenticationBaseSDKPackage", package: "ios.assecolib.authenticationbasesdk.package"),
+            ],
+            path: "Sources/ASEELicenseValidationSDK"
+        ),
+        .target(
+            name: "ASEELicenseGenerationSDK",
+            dependencies: [
+                "ASEELicenseGenerationSDKBinary",
+                .product(name: "ASEEAuthenticationBaseSDKPackage", package: "ios.assecolib.authenticationbasesdk.package"),
+            ],
+            path: "Sources/ASEELicenseGenerationSDK"
         ),
     ]
 )
