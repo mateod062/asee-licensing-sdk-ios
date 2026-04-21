@@ -14,11 +14,6 @@ let package = Package(
             targets: ["ASEELicenseGenerationSDK"]
         ),
     ],
-    dependencies: [
-        // Internal — clone to this relative path before resolving.
-        // Replace with a remote URL once ASEEAuthenticationBaseSDKPackage has a hosted distribution.
-        .package(path: "../ios.assecolib.authenticationbasesdk.package"),
-    ],
     targets: [
         .binaryTarget(
             name: "ASEELicenseValidationSDK",
