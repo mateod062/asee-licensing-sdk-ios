@@ -19,6 +19,10 @@ let package = Package(
             url: "ssh://git@git.asseco-see.hr:2022/all-projects/asseco-see-hrvatska/security-and-compliance/products/mobile-development/ios.assecolib.authenticationbasesdk.package.git",
             branch: "mdokic-WIP"
         ),
+        .package(
+            url: "https://github.com/iosdevzone/IDZSwiftCommonCrypto.git",
+            from: "0.16.1"
+        ),
     ],
     targets: [
         .binaryTarget(
@@ -35,6 +39,7 @@ let package = Package(
             name: "ASEELicenseValidationSDKSources",
             dependencies: [
                 .product(name: "ASEEAuthenticationBaseSDKPackage", package: "ios.assecolib.authenticationbasesdk.package"),
+                .product(name: "IDZSwiftCommonCrypto", package: "IDZSwiftCommonCrypto"),
             ],
             path: "Sources/ASEELicenseValidationSDK"
         ),
@@ -42,6 +47,7 @@ let package = Package(
             name: "ASEELicenseGenerationSDKSources",
             dependencies: [
                 .product(name: "ASEEAuthenticationBaseSDKPackage", package: "ios.assecolib.authenticationbasesdk.package"),
+                .product(name: "IDZSwiftCommonCrypto", package: "IDZSwiftCommonCrypto"),
             ],
             path: "Sources/ASEELicenseGenerationSDK"
         ),
