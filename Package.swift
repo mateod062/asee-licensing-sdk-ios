@@ -16,38 +16,32 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "ssh://git@git.asseco-see.hr:2022/all-projects/asseco-see-hrvatska/security-and-compliance/products/mobile-development/ios.assecolib.authenticationbasesdk.package.git",
-            branch: "mdokic-WIP"
-        ),
-        .package(
-            url: "https://github.com/iosdevzone/IDZSwiftCommonCrypto.git",
-            from: "0.16.1"
+            url: "https://github.com/mateod062/asee-authentication-base-ios-sdk.git",
+            from: "1.0.0"
         ),
     ],
     targets: [
         .binaryTarget(
             name: "ASEELicenseValidationSDK",
             url: "https://github.com/mateod062/asee-licensing-sdk-ios/releases/download/v1.0.0/ASEELicenseValidationSDK.xcframework.zip",
-            checksum: "ef4d8c14e055563457d3497ca61f1b88fa895df18d3e214b30e8fa0f6be717aa"
+            checksum: "0433f628a98e521c6c66c7cc334aa631c7b51be9740b0605b1c019bb3051b9e0"
         ),
         .binaryTarget(
             name: "ASEELicenseGenerationSDK",
             url: "https://github.com/mateod062/asee-licensing-sdk-ios/releases/download/v1.0.0/ASEELicenseGenerationSDK.xcframework.zip",
-            checksum: "daf900a514c41cc639eccdee1f86075fd7ca0dd3108f868cf9c6bbadf45a9365"
+            checksum: "7c5f35f18e2d21a24725993a769d204cdbbad923e709e9e25280f2f6ad42557b"
         ),
         .target(
             name: "ASEELicenseValidationSDKSources",
             dependencies: [
-                .product(name: "ASEEAuthenticationBaseSDKPackage", package: "ios.assecolib.authenticationbasesdk.package"),
-                .product(name: "IDZSwiftCommonCrypto", package: "IDZSwiftCommonCrypto"),
+                .product(name: "ASEEAuthenticationBaseSDKPackage", package: "asee-authentication-base-ios-sdk"),
             ],
             path: "Sources/ASEELicenseValidationSDK"
         ),
         .target(
             name: "ASEELicenseGenerationSDKSources",
             dependencies: [
-                .product(name: "ASEEAuthenticationBaseSDKPackage", package: "ios.assecolib.authenticationbasesdk.package"),
-                .product(name: "IDZSwiftCommonCrypto", package: "IDZSwiftCommonCrypto"),
+                .product(name: "ASEEAuthenticationBaseSDKPackage", package: "asee-authentication-base-ios-sdk"),
             ],
             path: "Sources/ASEELicenseGenerationSDK"
         ),
