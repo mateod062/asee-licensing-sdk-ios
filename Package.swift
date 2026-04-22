@@ -24,12 +24,12 @@ let package = Package(
         .binaryTarget(
             name: "ASEELicenseValidationSDK",
             url: "https://github.com/mateod062/asee-licensing-sdk-ios/releases/download/v1.0.0/ASEELicenseValidationSDK.xcframework.zip",
-            checksum: "a95babbc03181034eba12ca5232b25ad605863cfc6ef4ff19c1a81a4e8ade69b"
+            checksum: "ef4d8c14e055563457d3497ca61f1b88fa895df18d3e214b30e8fa0f6be717aa"
         ),
         .binaryTarget(
             name: "ASEELicenseGenerationSDK",
             url: "https://github.com/mateod062/asee-licensing-sdk-ios/releases/download/v1.0.0/ASEELicenseGenerationSDK.xcframework.zip",
-            checksum: "72b3e790aaf68efb257f07e119eb0e6e94aa8ee239e100a82fe14980bd03024c"
+            checksum: "daf900a514c41cc639eccdee1f86075fd7ca0dd3108f868cf9c6bbadf45a9365"
         ),
         .target(
             name: "ASEELicenseValidationSDKSources",
